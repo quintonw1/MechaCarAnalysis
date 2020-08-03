@@ -1,0 +1,80 @@
+# Fuel Efficiency (MPG) 
+
+The following hypothesis were made about the relationship between the vehicle's efficiency (mpg), and the various independent parameters that were tested. 
+Additionally, the significance level that was chosen to disprove the assumptions is 0.05, or 5%. 
+
+H0 --> The vehicle's fuel efficiency is explained by random chance and not as a function of the various parameters. 
+Ha --> The vehicle's fuel efficiency is dictated by variation in the various parameters measured. 
+
+Since the vehicle's powertrain data is in a non-numerical form (categorical data), it cannot be used in this multiple variable linear regression modelling analysis. Instead two separate regression analyses are to be performed. 
+One for the vehicles that have awd, and one for the vehicles that don't have awd. The results will then be compared and then an decision regarding the impact that drivetrain has on fuel effieciency will be made. 
+
+As shown in the summary table in the RScript file, the following variables show a non-random amount of variance to the mpg values (these were determined by comparing the Pr(>|t|) values 
+against the confidence level discussed above. Any value that is lower than the confidence level above implies that there isn't a random relationship between the two parameters):
+
+AWD: 
+
+1. Vehicle Length 
+    - Pr(>|t|) value of 3.05*10^-12
+        - Since the value is much less than our confidence level, it is safe to assume that there is random relationship between the vehicle's length 
+        and the it's fuel efficiency 
+2. Ground Clearance 
+    - Pr(>|T|) value of 2.13*10^-8
+        - Since the value is much less than our confidence level, it is safe to assume that there is random relationship between the vehicle's ground clearance
+        and the it's fuel efficiency 
+3. Vehicle Weight 
+    - Pr(>|T|) value of 0.0728 
+        - This value is close enough to the confidence level and allows us to diprove that it has a random amount of impact 
+        on the vehicle's fuel efficency 
+4. Spoiler Angle 
+    - Pr(>|T|) value of 0.2339 
+        - This value is larger than our confidence level, and therefore we cannot disprove our assumption that there is a random relationship between the vehicle's fuel 
+        efficiency and the angle of the it's spoiler 
+
+NON-AWD: 
+
+1. Vehicle Length 
+    - Pr(>|t|) value of 9.21*10^-7
+        - Since the value is much less than our confidence level, it is safe to assume that there is random relationship between the vehicle's length 
+        and the it's fuel efficiency 
+2. Ground Clearance 
+    - Pr(>|T|) value of 9.07*10^-6
+        - Since the value is much less than our confidence level, it is safe to assume that there is random relationship between the vehicle's ground clearance
+        and the it's fuel efficiency 
+3. Vehicle Weight 
+    - Pr(>|T|) value of 0.934 
+        - This value is larger than our confidence level, and therefore we cannot disprove our assumption that there is a random relationship between the vehicle's fuel 
+        efficiency and the it's weight  
+4. Spoiler Angle 
+    - Pr(>|T|) value of 0.861 
+        - This value is larger than our confidence level, and therefore we cannot disprove our assumption that there is a random relationship between the vehicle's fuel 
+        efficiency and the angle of the it's spoiler 
+
+Since the intercept's probaility for each dataset (AWD, and NON-AWD) are much less than the confidence level, it is implied that there are other variables that are not taken into account in this analysis that should be consdiered,
+if a completely accurate model is desired to predict MPG. Finally, looking at multiple r-squared value for the two models (0.7741 - AWD, 0.7566 - NON-AWD) - which compares the results of the fitted model to the actual data - it tells us that these models are a good fit 
+as their values are greater than 0.7. 
+
+When comparing the AWD to NON-AWD models with identical parameters, it is observed that the mpg is approximately 3.3 units higher for non-awd. This implies that the non-awd vehicles have a higher 
+fuel efficiency than awd vehicles. 
+
+# Suspension Coil Statistical Analysis 
+
+A statistical analysis was performed to find the mean, median, variance and standard deviation of the suspension coil data. The following values were obtained for each parameters: 
+
+Mean: 1499.531
+Median: 1499.747
+Standard Deviation: 8.731242
+Variance: 76.23459
+
+As per the design specifications for the MechaCar suspension coils, the variance cannot exceed 100 psi. From our analysis, it is shown that the variance is within this limits implying that these coils adhere to 
+design specifications. 
+
+It is stated that the mean of the population is at 1500 psi. A t-test is performed to determine if this sample's mean is statistically different from the population. The following hypotheses were test: 
+
+H0 --> There is no statistical diference between the sample mean and the presumed population mean.
+Ha --> There is a statistical difference between the sample mean and the presumed population mean. 
+
+After calculating the p-value using a one sample t-test, it was determined that when using the previous confidence level, there isn't sufficient statistical difference to disprove that there is 
+statistical differences between the sample and population mean (p-value = 0.5117 vs 0.05 confidence level).
+
+
