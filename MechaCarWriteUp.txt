@@ -77,4 +77,43 @@ Ha --> There is a statistical difference between the sample mean and the presume
 After calculating the p-value using a one sample t-test, it was determined that when using the previous confidence level, there isn't sufficient statistical difference to disprove that there is 
 statistical differences between the sample and population mean (p-value = 0.5117 vs 0.05 confidence level).
 
+# Vehicle Manufacturer Ranking 
 
+In order to determine which vehicle manufacturer is performing the best in all categories, the following metrics and corresponding statistical tests must be performed: 
+
+1. Fuel Efficiency 
+    A. A Multiple Linear Regression statistical test must be performed with the following information: 
+        Question: How do the other vehicle manufacturers rank against MechaCar for fuel efficiency given similar parameters? 
+        Independent (Continuous data):
+        - vehicle dimensions 
+        - vehicle weight
+        - engine hp 
+        Dependent (Continuous): 
+        - fuel efficiency (mpg)
+        Hypothesis: 
+        H0 --> All vehicle manufacturers have similar fuel efficient results.  
+        Ha --> There are external factors impacting the fuel efficiency for some manufacturers (i.e., slope p-values are drasticaly different for some manufacturers). 
+2. Vehicle cost 
+    A.  A ANOVA test with the following information: 
+        Question: How do the other vehicle manufacturers rank against MechaCar when considering vehicle specifications, vehicle features, and the resulting cost? 
+        Independent (Categorical data):
+        - vehicle features (autonomous features, stereo quality, color, interior material, etc)
+        - vehicle specifications (cyl, class)
+        Dependent (Continuous): 
+        - vehicle cost 
+        Hypothesis: 
+        H0 --> The average cost for an indentical vehicle between the manufacturers is all the same. 
+        Ha --> The average cost for an indentical vehicle between the manufacturers are not the same. 
+3. Vehicle Performance 
+    A.  A ANOVA test with the following information: 
+        Question: How does MechaCar rank against other manufacturers in vehicle performance when considering vehicle power related specifications.  
+        Independent (Categorical data):
+        - Engine Size   
+        - Vehicle Size 
+        - Vehicle Class 
+        - Vehicle tire size and brand
+        Dependent (Continuous data): 
+        - 0-60mph speed test 
+        Hypothesis: 
+        H0 --> The average time to 60 mph is the same between manufacturers. 
+        Ha --> The average time to 60 mph is not the same between manufacturers. 
